@@ -137,12 +137,15 @@ int main(void)
     // BSP_LED_Toggle(LED_GREEN);
 
     /* -- Sample board code for User push-button in interrupt mode ---- */
+
+    /* -- Sample board code to toggle led ---- */
     if (BspButtonState == BUTTON_PRESSED) {
       /* Update button state */
       BspButtonState = BUTTON_RELEASED;
-      /* -- Sample board code to toggle led ---- */
-      printf("test!!!\n\r");
       BSP_LED_Toggle(LED_GREEN);
+      printf("test!!!\n\r");
+      // if (BSP_LED_On(LED_GREEN)) {printf("LED ON");}
+      // else {printf("LED OFF");}
       
 
       /* ..... Perform your action ..... */
